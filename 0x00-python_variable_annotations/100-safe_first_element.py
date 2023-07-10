@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-# The types of the elements of the input are not know
-from types import NoneType
-import typing
+"""duck typing protocols"""
+from typing import Sequence, Any, Union
 
 
-def safe_first_element(lst: typing.Sequence[typing.Any]) -> typing.Union[
-        typing.Any, NoneType]:
-    """function that lst and return lst[0] or none"""
-
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
+    """The types of the elements of the input are not known"""
     if lst:
         return lst[0]
     else:
